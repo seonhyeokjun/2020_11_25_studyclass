@@ -1,1 +1,1 @@
-# studyclass
+# 공부반
