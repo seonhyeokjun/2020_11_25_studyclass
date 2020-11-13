@@ -1,4 +1,4 @@
-package com.studyclass.settings;
+package com.studyclass.settings.form;
 
 import com.studyclass.domain.Account;
 import lombok.Data;

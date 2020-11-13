@@ -1,4 +1,4 @@
-package com.studyclass.settings;
+package com.studyclass.settings.form;
 
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
