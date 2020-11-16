@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments.html :: head"></head>
 <body class="bg-light">
     <div th:replace="fragments.html :: main-nav"></div>
     <div th:replace="fragments.html :: study-banner"></div>
+
     <div class="container">
         <div th:replace="fragments.html :: study-info"></div>
         <div th:replace="fragments.html :: study-menu(studyMenu='info')"></div>
@@ -14,6 +15,10 @@
 
         <div th:replace="fragments.html :: footer"></div>
     </div>
-    <script th:replace="fragments.html :: tooltip"></script>
+    <script type="application/javascript">
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
 </body>
 </html>
