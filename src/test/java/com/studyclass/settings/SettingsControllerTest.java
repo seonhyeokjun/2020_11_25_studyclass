@@ -7,7 +7,7 @@ import com.studyclass.account.AccountService;
 import com.studyclass.domain.Account;
 import com.studyclass.domain.Tag;
 import com.studyclass.domain.Zone;
-import com.studyclass.settings.form.TagForm;
+import com.studyclass.tag.TagForm;
 import com.studyclass.tag.TagRepository;
 import com.studyclass.zone.ZoneForm;
 import com.studyclass.zone.ZoneRepository;

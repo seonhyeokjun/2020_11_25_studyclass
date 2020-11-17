@@ -1,20 +1,21 @@
 package com.studyclass.study;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.studyclass.account.CurrentAccount;
 import com.studyclass.domain.Account;
 import com.studyclass.domain.Study;
 import com.studyclass.study.form.StudyForm;
 import com.studyclass.study.validator.StudyFormValidator;
+import com.studyclass.tag.TagRepository;
+import com.studyclass.tag.TagService;
+import com.studyclass.zone.ZoneRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.net.URLEncoder;
@@ -24,7 +25,6 @@ import java.nio.charset.StandardCharsets;
 @RequiredArgsConstructor
 public class StudyController {
 
-    private final StudyRepository studyRepository;
 
     private final StudyService studyService;
 
