@@ -10,6 +10,7 @@ import com.studyclass.domain.Zone;
 import com.studyclass.settings.form.*;
 import com.studyclass.settings.validator.NicknameValidator;
 import com.studyclass.settings.validator.PasswordFormValidator;
+import com.studyclass.study.StudyRepository;
 import com.studyclass.tag.TagForm;
 import com.studyclass.tag.TagRepository;
 import com.studyclass.tag.TagService;
