@@ -1,4 +1,4 @@
-package com.studyclass.event;
+package com.studyclass.event.form;
 
 import com.studyclass.domain.EventType;
 import lombok.Data;
