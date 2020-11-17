@@ -27,6 +27,10 @@
                 font-family: -apple-system, BlinkMacSystemFont, "Noto Sans KR", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
             }
 
+            img {
+                background-size: cover;
+            }
+
             body,
             input,
             button,
@@ -42,7 +46,7 @@
 
     <nav th:fragment="main-nav" class="navbar navbar-expand-sm navbar-dark bg-dark">
         <a class="navbar-brand" href="/" th:href="@{/}">
-            <img src="/images/logo.png" width="30" height="30">
+            <img src="/images/logo.png">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
