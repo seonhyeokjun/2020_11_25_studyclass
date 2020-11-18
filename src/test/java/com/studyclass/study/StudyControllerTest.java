@@ -25,7 +25,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 @RequiredArgsConstructor
-class StudyControllerTest {
+public class StudyControllerTest {
 
     @Autowired
     MockMvc mockMvc;
@@ -113,9 +113,9 @@ class StudyControllerTest {
     @WithAccount("seon")
     @DisplayName("스터디 가입")
     void joinStudy() throws Exception {
-        Account whiteship = createAccount("whiteship");
+        Account hyeok = createAccount("hyeok");
 
-        Study study = createStudy("test-study", whiteship);
+        Study study = createStudy("test-study", hyeok);
 
         mockMvc.perform(get("/study/" + study.getPath() + "/join"))
                 .andExpect(status().is3xxRedirection())
@@ -129,8 +129,8 @@ class StudyControllerTest {
     @WithAccount("seon")
     @DisplayName("스터디 탈퇴")
     void leaveStudy() throws Exception {
-        Account whiteship = createAccount("whiteship");
-        Study study = createStudy("test-study", whiteship);
+        Account hyeok = createAccount("hyeok");
+        Study study = createStudy("test-study", hyeok);
 
         Account seon = accountRepository.findByNickname("seon");
         studyService.addMember(study, seon);
@@ -150,11 +150,11 @@ class StudyControllerTest {
     }
 
     protected Account createAccount(String nickname) {
-        Account whiteship = new Account();
-        whiteship.setNickname(nickname);
-        whiteship.setEmail(nickname + "@email.com");
-        accountRepository.save(whiteship);
-        return whiteship;
+        Account seon = new Account();
+        seon.setNickname(nickname);
+        seon.setEmail(nickname + "@email.com");
+        accountRepository.save(seon);
+        return seon;
     }
 
 }
