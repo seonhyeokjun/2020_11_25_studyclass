@@ -1,5 +1,8 @@
 package com.studyclass.modules.study;
 
+import com.studyclass.infra.AbstractContainerBaseTest;
+import com.studyclass.infra.MockMvcTest;
+import com.studyclass.modules.account.AccountFactory;
 import com.studyclass.modules.account.WithAccount;
 import com.studyclass.modules.account.AccountRepository;
 import com.studyclass.modules.account.Account;
@@ -19,11 +22,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 
-@Transactional
-@SpringBootTest
-@AutoConfigureMockMvc
-@RequiredArgsConstructor
-public class StudyControllerTest {
+@MockMvcTest
+public class StudyControllerTest extends AbstractContainerBaseTest {
 
     @Autowired
     MockMvc mockMvc;
@@ -36,6 +36,12 @@ public class StudyControllerTest {
 
     @Autowired
     AccountRepository accountRepository;
+
+    @Autowired
+    AccountFactory accountFactory;
+
+    @Autowired
+    StudyFactory studyFactory;
 
 
     @Test
@@ -111,24 +117,23 @@ public class StudyControllerTest {
     @WithAccount("seon")
     @DisplayName("스터디 가입")
     void joinStudy() throws Exception {
-        Account hyeok = createAccount("hyeok");
-
-        Study study = createStudy("test-study", hyeok);
+        Account hyeok = accountFactory.createAccount("hyeok");
+        Study study = studyFactory.createStudy("test-study", hyeok);
 
         mockMvc.perform(get("/study/" + study.getPath() + "/join"))
                 .andExpect(status().is3xxRedirection())
                 .andExpect(redirectedUrl("/study/" + study.getPath() + "/members"));
 
-        Account keesun = accountRepository.findByNickname("seon");
-        assertTrue(study.getMembers().contains(keesun));
+        Account seon = accountRepository.findByNickname("seon");
+        assertTrue(study.getMembers().contains(seon));
     }
 
     @Test
     @WithAccount("seon")
     @DisplayName("스터디 탈퇴")
     void leaveStudy() throws Exception {
-        Account hyeok = createAccount("hyeok");
-        Study study = createStudy("test-study", hyeok);
+        Account hyeok = accountFactory.createAccount("hyeok");
+        Study study = studyFactory.createStudy("test-study", hyeok);
 
         Account seon = accountRepository.findByNickname("seon");
         studyService.addMember(study, seon);

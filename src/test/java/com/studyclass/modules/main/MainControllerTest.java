@@ -1,5 +1,7 @@
 package com.studyclass.modules.main;
 
+import com.studyclass.infra.AbstractContainerBaseTest;
+import com.studyclass.infra.MockMvcTest;
 import com.studyclass.modules.account.AccountRepository;
 import com.studyclass.modules.account.AccountService;
 import com.studyclass.modules.account.form.SignUpForm;
@@ -12,6 +14,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.transaction.annotation.Transactional;
 
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.security.test.web.servlet.response.SecurityMockMvcResultMatchers.authenticated;
@@ -20,9 +23,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@SpringBootTest
-@AutoConfigureMockMvc
-class MainControllerTest {
+@MockMvcTest
+class MainControllerTest extends AbstractContainerBaseTest {
 
     @Autowired
     MockMvc mockMvc;
