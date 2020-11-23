@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 @RequiredArgsConstructor
 public class MainController {
 
-    private final NotificationRepository notificationRepository;
-
     @GetMapping("/")
     public String home(@CurrentAccount Account account, Model model){
         if (account!=null){
