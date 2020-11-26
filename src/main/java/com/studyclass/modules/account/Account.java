@@ -22,6 +22,7 @@ public class Account {
 
     @Id
     @GeneratedValue
+    @Column(unique = true)
     private Long id;
 
     @Column(unique = true)

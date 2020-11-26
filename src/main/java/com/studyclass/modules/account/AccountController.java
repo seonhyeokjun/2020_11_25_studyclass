@@ -30,7 +30,7 @@ public class AccountController {
         webDataBinder.addValidators(signUpFormValidator);
     }
 
-    @GetMapping(value = "/sign-up")
+    @GetMapping("/sign-up")
     public String signupForm(Model model){
         model.addAttribute(new SignUpForm());
         return "account/sign-up";
