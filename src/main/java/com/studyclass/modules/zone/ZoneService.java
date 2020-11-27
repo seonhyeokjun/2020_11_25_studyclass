@@ -20,10 +20,10 @@ public class ZoneService {
 
     private final ZoneRepository zoneRepository;
 
-    @PostConstruct
+    //@PostConstruct
     public void initZoneData() throws IOException {
         if (zoneRepository.count() == 0){
-            ClassPathResource resource = new ClassPathResource("zones_kr.csv");
+            Resource resource = new ClassPathResource("zones_kr.csv");
             List<Zone> zoneList = Files.readAllLines(resource.getFile().toPath(), StandardCharsets.UTF_8).stream()
                         .map(line -> {
                             String[] split = line.split(",");
