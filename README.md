@@ -11,6 +11,7 @@
 3. maven
 4. docker
 5. JPA
+6. PostgreSQL
 
 ## 서버 배포
 1. AWS
