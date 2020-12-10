@@ -25,10 +25,15 @@
 4. EC-2
 5. ubuntu
 
+## ERD
+![스크린샷 2020-11-30 오전 12 40 23](https://user-images.githubusercontent.com/37436822/100546464-c3723800-32a4-11eb-93a6-eab2f5d528a5.png)
+
 ## 개요
 공부나 모임을 해당 사이트를 이용하여 이용할 수 있는 사이트입니다.
 AWS서버에 올려져 있는 상태이기 때문에 데모 사이트를 이용해 보실수 있습니다.
 
-## ERD
-![스크린샷 2020-11-30 오전 12 40 23](https://user-images.githubusercontent.com/37436822/100546464-c3723800-32a4-11eb-93a6-eab2f5d528a5.png)
+## 첫화면
+
+<img width="1653" alt="스크린샷 2020-12-11 오전 12 13 53" src="https://user-images.githubusercontent.com/37436822/101790654-0d310d00-3b46-11eb-96a1-5edcf2a8722d.png">
+
 
